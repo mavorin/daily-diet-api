@@ -1,0 +1,244 @@
+{
+  "info": {
+    "_postman_id": "7c8ac43c-7162-4706-8704-493cdd5fa2a0",
+    "name": "Daily Diet API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54443178",
+    "_collection_link": "https://go.postman.co/collection/54443178-7c8ac43c-7162-4706-8704-493cdd5fa2a0?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Register User",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"username\": \"marcus\",\n    \"password\": \"1234\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/register",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"username\": \"marcus\",\n    \"password\": \"1234\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/login",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update User",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"password\": \"gabrielhackudao1237\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/user/:id/password",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "user",
+            ":id",
+            "password"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Meal",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Almoço\",\n    \"description\": \"Almoço com feijão, arroz, salada e carne\",\n    \"datetime\": \"10:00\",\n    \"within_diet\": true\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/meals",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "meals"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Logout",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/logout",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "logout"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "List Meal",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/meals",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "meals"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Meal by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/meals/:meal_id",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "meals",
+            ":meal_id"
+          ],
+          "variable": [
+            {
+              "key": "meal_id",
+              "value": "2",
+              "description": "ID da refeição."
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Meal",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Janta\",\n    \"description\": \"Arroz e salada\",\n    \"datetime\": \"19:00\",\n    \"within_diet\": true\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/meals/:meal_id",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "meals",
+            ":meal_id"
+          ],
+          "variable": [
+            {
+              "key": "meal_id",
+              "value": "3",
+              "description": "ID da refeição"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Meal",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/meals/:meal_id",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "meals",
+            ":meal_id"
+          ],
+          "variable": [
+            {
+              "key": "meal_id",
+              "value": "3",
+              "description": "ID da refeição"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
