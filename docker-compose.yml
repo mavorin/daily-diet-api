@@ -1,0 +1,16 @@
+services:
+  db:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_USER: 'admin'
+      MYSQL_PASSWORD: 'admin123'
+      MYSQL_DATABASE: 'daily-diet-crud'
+      MYSQL_ROOT_PASSWORD: 'admin123'
+    ports:
+      - "3306:3306"
+    expose:
+      # Expose port 3306 to other services in the same Docker network
+      - "3306"
+    volumes:
+      - $HOME/docker/daily-diet-data:/var/lib/mysql
