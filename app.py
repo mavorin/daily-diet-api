@@ -10,14 +10,14 @@ import bcrypt
 
 class Config:
   SECRET_KEY = 'base-key'
+  SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:admin123@127.0.0.1:3306/daily-diet-crud"
+  SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 class DevConfig(Config):
   DEBUG = True
 
 app = Flask(__name__)
 app.config.from_object(DevConfig)
-app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://root:admin123@127.0.0.1:3306/daily-diet-crud"
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 login_manager = LoginManager()
 db.init_app(app)
